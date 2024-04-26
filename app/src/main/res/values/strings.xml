@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HealthAndWellbeing</string>
+    <string name="family_healthcare">Family Healthcare</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="button_login">Login</string>
+    <string name="button_register">Register</string>
+    <string name="enter_surname">Enter surname</string>
+    <string name="health_welbeing">DUT Healthcare</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="log_in">Log In</string>
+</resources>
