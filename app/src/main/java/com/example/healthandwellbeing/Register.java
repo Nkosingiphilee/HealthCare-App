@@ -1,6 +1,7 @@
 package com.example.healthandwellbeing;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import javax.xml.transform.Result;
 
 public class Register extends AppCompatActivity {
 
@@ -32,6 +35,7 @@ public class Register extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register);
 
+        dbHelper = new DatabaseHelper(this);
         username=findViewById(R.id.idUsername);
         surname=findViewById(R.id.idSurname);
         emailAddress=findViewById(R.id.idEmail);
@@ -55,6 +59,7 @@ public class Register extends AppCompatActivity {
 
     }
     private void insertUser(String Username, String Surname, String Email, String PhoneNo, String Password){
+        Intent intent=new Intent(this,MainActivity.class);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(DatabaseHelper.COLUMN_Username, Username);
@@ -65,6 +70,7 @@ public class Register extends AppCompatActivity {
         long id = db.insert(DatabaseHelper.TABLE_USERS, null, values);
         if (id != -1) {
             Toast.makeText(Register.this, "New user saved :) with identity (PK): " + id, Toast.LENGTH_SHORT).show();
+            startActivity(intent);
         } else {
             Toast.makeText(Register.this, "Failed to save new user. Try again!", Toast.LENGTH_SHORT).show();
         }

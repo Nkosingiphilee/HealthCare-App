@@ -9,4 +9,10 @@
     <string name="health_welbeing">DUT Healthcare</string>
     <string name="enter_email">Enter Email</string>
     <string name="log_in">Log In</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="full_name_s">Full name(s)</string>
+    <string name="appointment_date">Appointment date</string>
+    <string name="appointment_time">Appointment Time</string>
+    <string name="button_submit">Submit</string>
+    <string name="reason_for_the_visit">Reason for the visit</string>
 </resources>
