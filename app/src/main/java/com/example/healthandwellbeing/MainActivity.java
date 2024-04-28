@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         username=findViewById(R.id.idLoginUser);
         password=findViewById(R.id.idLoginPassword);
-        result=findViewById(R.id.idResult);
+
 
        buttonRegister=findViewById(R.id.idRegister);
         buttonRegister.setOnClickListener(new View.OnClickListener() {
