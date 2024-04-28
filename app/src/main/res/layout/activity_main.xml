@@ -87,10 +87,14 @@
 
     <TextView
         android:id="@+id/idResult"
-        android:layout_width="198dp"
-        android:layout_height="30dp"
+        android:layout_width="238dp"
+        android:layout_height="94dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="510dp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.741" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

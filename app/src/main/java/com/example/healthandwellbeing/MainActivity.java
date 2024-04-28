@@ -20,14 +20,18 @@ public class MainActivity extends AppCompatActivity {
     private TextView username;
     private TextView password;
     private TextView result;
+    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        username=findViewById(R.id.idLoginUser);
+        password=findViewById(R.id.idLoginPassword);
+        result=findViewById(R.id.idResult);
 
-        buttonRegister=findViewById(R.id.idRegister);
+       buttonRegister=findViewById(R.id.idRegister);
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +40,28 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnLogin=findViewById(R.id.idLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                String Username=username.getText().toString();
+                String Password=password.getText().toString();
+
+                if (Username.equals("username") && Password.equals("password")){
+                    Intent intent=new Intent(MainActivity.this,Landin.class);
+                    intent.putExtra("username",Username);
+                    Toast.makeText(MainActivity.this,"log In successful",Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                }else {
+                    username.setText("");
+                    password.setText("");
+                    Toast.makeText(MainActivity.this,"login unsuccessful",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
     }
+
 }

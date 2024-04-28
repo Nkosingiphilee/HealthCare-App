@@ -1,6 +1,7 @@
 package com.example.healthandwellbeing;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +21,11 @@ public class Landin extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        Bundle goodies = getIntent().getExtras();
+        if (goodies !=null){
+            String name = goodies.getString("username","not logged");
+            TextView lgUser=findViewById(R.id.idLog);
+            lgUser.setText("Logged as "+name);
+        }
     }
 }
